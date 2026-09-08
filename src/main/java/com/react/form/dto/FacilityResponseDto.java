@@ -1,28 +1,18 @@
-package com.react.form.models;
+package com.react.form.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import java.util.UUID;
 
-@Entity
-@Table(name = "facilities")
-public class Facility {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class FacilityResponseDto {
     private UUID id;
-
     private String name;
     private String description;
     private int capacity;
     private boolean active;
     private String location;
 
-    public Facility() {}
+    public FacilityResponseDto() {}
 
-    public Facility(UUID id, String name, String description, int capacity, boolean active, String location) {
+    public FacilityResponseDto(UUID id, String name, String description, int capacity, boolean active, String location) {
         this.id = id;
         this.name = name;
         this.description = description;

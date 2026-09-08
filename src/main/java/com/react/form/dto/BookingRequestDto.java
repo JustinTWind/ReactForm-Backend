@@ -1,19 +1,6 @@
-package com.react.form.models;
+package com.react.form.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import java.util.UUID;
-
-@Entity
-@Table(name = "bookings")
-public class Booking {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
-
+public class BookingRequestDto {
     private String userEmail;
     private String facilityName;
     private String startAt;
@@ -21,20 +8,7 @@ public class Booking {
     private String status;
     private String notes;
 
-    public Booking() {}
-
-    public Booking(UUID id, String userEmail, String facilityName, String startAt, String endAt, String status, String notes) {
-        this.id = id;
-        this.userEmail = userEmail;
-        this.facilityName = facilityName;
-        this.startAt = startAt;
-        this.endAt = endAt;
-        this.status = status;
-        this.notes = notes;
-    }
-
-    public UUID getId() { return id; }
-    public void setId(UUID id) { this.id = id; }
+    public BookingRequestDto() {}
 
     public String getUserEmail() { return userEmail; }
     public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
